@@ -8,8 +8,8 @@ export async function getProducts() {
 
     console.log("API_URL:", API_URL);
 
-    const res = await fetch(API_URL, {
-      cache: "no-store", // ✅ IMPORTANT FIX
+    const res = await fetch("https://fakestoreapi.com/products", {
+      cache: "no-store",
     });
 
     if (!res.ok) throw new Error("Failed to fetch");
