@@ -1,4 +1,5 @@
 export const dynamic = "force-dynamic";
+export const runtime = "edge"; // ✅ ADD THIS
 
 import { Product } from "@/types/product";
 import ProductGridWrapper from "@/components/ProductGridWrapper";
@@ -6,12 +7,13 @@ import { getProducts } from "@/lib/api";
 
 export const metadata = {
   title: "Discover Our Products | Mettā Muse",
-  description:"Browse premium products with filters, sorting, and responsive design."
+  description:
+    "Browse premium products with filters, sorting, and responsive design.",
 };
 
 async function ProductsResult(): Promise<Product[]> {
-  const res = await getProducts()
-  return res
+  const res = await getProducts();
+  return res;
 }
 
 export default async function Page() {
