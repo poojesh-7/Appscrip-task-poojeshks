@@ -6,9 +6,7 @@ export async function getProducts() {
       throw new Error("API URL is undefined");
     }
 
-    console.log("API_URL:", API_URL);
-
-    const res = await fetch("https://fakestoreapi.com/products", {
+    const res = await fetch(API_URL, {
       cache: "no-store",
     });
 
