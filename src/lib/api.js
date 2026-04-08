@@ -1,13 +1,22 @@
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 export async function getProducts() {
   try {
-    const res = await fetch(API_URL);
+    if (!API_URL) {
+      throw new Error("API URL is undefined");
+    }
+
+    console.log("API_URL:", API_URL);
+
+    const res = await fetch(API_URL, {
+      cache: "no-store", // ✅ IMPORTANT FIX
+    });
 
     if (!res.ok) throw new Error("Failed to fetch");
 
-    return res.json();
+    return await res.json();
   } catch (err) {
-    console.error(err);
+    console.error("FETCH ERROR:", err);
     return [];
   }
 }
