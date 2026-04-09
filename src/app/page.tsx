@@ -1,5 +1,5 @@
 export const dynamic = "force-dynamic";
-export const runtime = "edge"; // ✅ ADD THIS
+// export const runtime = "edge"; // Removed for Netlify compatibility
 
 import { Product } from "@/types/product";
 import ProductGridWrapper from "@/components/ProductGridWrapper";

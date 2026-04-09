@@ -1,11 +1,7 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_URL = "https://fakestoreapi.com/products";
 
 export async function getProducts() {
   try {
-    if (!API_URL) {
-      throw new Error("API URL is undefined");
-    }
-
     const res = await fetch(API_URL, {
       cache: "no-store",
     });
